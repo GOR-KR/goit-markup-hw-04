@@ -57,6 +57,9 @@ a {
     width: 100%;
     z-index: 10;
     background: #fff;
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header .container {
@@ -83,6 +86,21 @@ a {
 .header-list .link {
     padding: 24px 0;
     display: block;
+    position: relative;
+    color: #404bbf;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-list .link::after {
+    content: "";
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    background-color: #404bbf;
+    border-radius: 2px;
+
 }
 
 /* .contact .link {
@@ -93,16 +111,14 @@ a {
     padding-bottom: 24px;
 } */
 
-.nav .link:hover::after,
+/* .nav .link:hover::after,
 .nav .link:focus::after,
 .nav .link:active::after {
-    content: "";
-    width: 66px;
-    height: 4px;
+    
     display: block;
-    background-color: #404bbf;
-    border-radius: 2px;
-}
+    
+    
+} */
 
 .header .link:hover, .header .link:focus  {
     color: #404bbf;
@@ -129,7 +145,9 @@ nav .accent {
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 1440px;
+    background-size: cover;
+    margin-top: 72px;
+    max-width: 1440px;;
 }
 
 .hero-text {
@@ -159,7 +177,7 @@ nav .accent {
     min-width: 169px;
     height: 56px; 
     border: none;
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }   
 
 .hero-btn:hover, .hero-btn:focus {
@@ -209,7 +227,9 @@ nav .accent {
     border: 1px solid #8e8f99;
     border-radius: 4px;
     background: #f4f4fd;
-    padding-top: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 8px;
 }
 
@@ -259,7 +279,7 @@ nav .accent {
 }
     
 .teammate-name {
-    padding: 32px 16px;
+    padding: 32px 0px;
 }
 
 .team-li .main-li {
@@ -299,6 +319,7 @@ nav .accent {
     width: 16px;
     height: 16px;
     margin: 0 auto;
+    fill: #f4f4fd;
 }
 
 .portfolio {
@@ -315,10 +336,13 @@ nav .accent {
     
 }
 
+
+
 .portfolio-li {
     width: calc((100% - 48px) / 3);
     position: relative;
     overflow: hidden;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-li:hover,
@@ -364,7 +388,11 @@ nav .accent {
 
 .ftr .container {
     display: flex;
-    gap: 120px;   
+    align-items: baseline;
+}
+
+.ftr-box {
+    margin-right: 120px;
 }
 
 .ftr .logo {
@@ -390,12 +418,21 @@ nav .accent {
 }
 
 .media-text {
-    font-weight: 500;   
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    margin-bottom: 16px;
 }
 
 .ftr-media {
     display: flex;
     flex-direction: column;
+    /* gap: 16px; */
+}
+
+.icon-list {
     gap: 16px;
 }
 
