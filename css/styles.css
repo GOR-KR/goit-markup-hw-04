@@ -374,7 +374,7 @@ nav .accent {
 
 .portfolio-li:hover .overlay,
 .portfolio-li:focus .overlay {
-    transform: translateY(0);
+    transform: translateY(0%);
 }
 
 
